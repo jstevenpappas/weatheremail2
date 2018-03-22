@@ -9,7 +9,7 @@
 
 
 class AppError(Exception):
-    """Generic exception for the applicatoin"""
+    """Generic exception for the application"""
     def __init__(self, msg, original_exception):
         super(AppError, self).__init__(msg + (": %s" % original_exception))
         self.original_exception = original_exception
