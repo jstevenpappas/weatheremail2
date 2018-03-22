@@ -1,6 +1,5 @@
 """
 .. module:: utils
-   :platform: Unix, Windows
    :synopsis: Module containing helper methods.
 .. moduleauthor:: John Pappas <jstevenpappas at gmail.com>
 
@@ -14,20 +13,39 @@ from .app_error import AppError
 
 
 def encode_to_json_for_session(var):
-    """
+    """Returns jsonpickle encoded strings for store in Flask session.
 
-    :param var:
-    :return:
+    Notes:
+        There are better explanations online than this but in short: values
+            written to the session by app code will be put in a
+            cryptographically signed cookie sent to the client.
+        Because it is going from the server to the client over the network,
+            it needs to be serialized.
+
+    Args:
+        var (str): Any value we want to store in session.
+
+    Returns:
+        encoded string that is able to be stored in session
+
     """
     return jsonpickle.encode(var)
 
 
 def get_data_file(subdir='data', filename=None):
-    """
+    """Returns absolute path of file containing city,state data.
 
-    :param subdir:
-    :param filename:
-    :return:
+    Args:
+        api_key (str): Wunderground Weather API Key.
+        data (dict): values described above
+
+    Returns:
+        populated URI str for which to access weather data API
+
+    Raises:
+        TypeError wrapped with AppError: If positional params subdir or
+            filename are passed with invalid data.
+
     """
     try:
         if subdir is None:
@@ -44,10 +62,17 @@ def get_data_file(subdir='data', filename=None):
 
 
 def get_city_data(loadfile='top_100_city_state_sorted.txt'):
-    """
+    """Returns city,state data from text file in data directory.
 
-    :param loadfile:
-    :return:
+    Args:
+        loadfile (str): Filename containing city, state data.
+
+    Returns:
+        Generator of list objects
+
+    Raises:
+        FileNotFoundError wrapped with AppError: If file not able to be found
+
     """
     try:
         cities_file = get_data_file(filename=loadfile)
@@ -60,10 +85,17 @@ def get_city_data(loadfile='top_100_city_state_sorted.txt'):
 
 
 def get_username_from_email(email_address):
-    """
+    """Returns username portion of email.
 
-    :param email_address:
-    :return:
+    Args:
+        email_address (str): email address of person model
+
+    Returns:
+        username portion of email address
+
+    Raises:
+        AttributeError wrapped with AppError: If None passed as param
+
     """
     try:
 

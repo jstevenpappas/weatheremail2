@@ -87,7 +87,7 @@ def get_user_data():
         state data.
 
     Returns:
-       Generator
+       Generator of 3 element tuples
 
     Raises:
        AppError: If no results from database occurs
