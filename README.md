@@ -125,8 +125,6 @@ At the command line, run the following to populate your database with city data:
 
 ### Logging
 
-Logfile locations are the following:
-* /Mailing/analytics/seed_pulse/gmail_seedpulse.log
-* /Mailing/analytics/seed_pulse/hotmail_seedpulse.log
-* /Mailing/analytics/seed_pulse/yahoo_seedpulse.log
-* /Mailing/analytics/seed_pulse/aol_seedpulse.log
+Logging is configured in the ```weatheremail2.__init__.py``` file and writes to the root directory with ```__name__```.log (i.e., weatheremail2.log) as the logfile name. 
+
+
