@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Bookmarked Url?</h1>
+    <p>You seem to have accessed a page that confirms your signup for our weather email yet we have no record of you signing up.</p>
+    <p>Please access the link below to sign up for weather update from your favourite city!</p>
+    <p>
+        <a href="{{ url_for('signup') }}">Click here to access our signup page!</a>
+    </p>
+{% endblock %}

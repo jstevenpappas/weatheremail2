@@ -1,0 +1,40 @@
+###
+#
+# ignores the following file patterns
+#
+###
+#   AWS eb env specific files
+.elasticbeanstalk/*
+#   PyCharm IDE directory/artifacts
+.idea/*
+
+#   bytecode files and/or directories containing them
+__pycache__/
+*.py[cod]
+
+__pycache__/*
+*.pyc
+*.pyo
+build/
+dist/
+
+##  local shell scripts
+*.sh
+
+##  log files
+*.log
+##  configuration related files
+settings.cfg
+.env
+exports.txt
+
+##  misc temp files
+tmp*
+*.tmp
+
+#   Unit test / coverage reports
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
