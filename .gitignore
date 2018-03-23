@@ -8,6 +8,10 @@
 #   PyCharm IDE directory/artifacts
 .idea/*
 
+
+#instance config
+instance/
+
 #   bytecode files and/or directories containing them
 __pycache__/
 *.py[cod]
