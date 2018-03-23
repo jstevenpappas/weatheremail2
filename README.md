@@ -54,10 +54,6 @@ Additionally, it is assumed you are able to acquire the following:
 
 ## Configuration
 
-Configuration values used by the application reside in the config module.
-
-Your dev config would use DefaultConfig while your unit tests would use TestingConfig.
-
 The following config values are the main ones you will need to provide with values:
 
 * MAIL_USERNAME
@@ -72,7 +68,7 @@ The following config values are the main ones you will need to provide with valu
 If you wish to disable Recaptcha in dev, then you can set the following to false and leave the other Recapcha configs empty:
 ``` RECAPTCHA_ENABLED = False```
 
-An alternative to relying on the config module for configuration, you can create a ```settings.cfg``` file and  put your configuration in there and set the following envvironment variable:
+To configure the application, you can create a ```settings.cfg``` file and  put your configuration in there and set the following envvironment variable:
 ```
 export APP_SETTINGS=/path/to/settings.cfg
 ```
