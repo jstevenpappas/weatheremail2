@@ -32,7 +32,7 @@ class WeatherEmailTestCase(unittest.TestCase):
 
     """
     def setUp(self):
-        self.app = create_app(default_config='weatheremail2.config.TestingConfig')
+        self.app = create_app(env='test')
         self.mail = mail
         self.client = self.app.test_client
         with self.app.app_context():
