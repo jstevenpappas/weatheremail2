@@ -39,7 +39,7 @@ To setup the project, please do the following:
 * clone the repo
     * ```git clone https://github.com/jstevenpappas/weatheremail2.git```
 * create the virtualenv
-    * ```mkvirtualenv -p python2.7 -a /your/workspace/weatheremail2```
+    * ```mkvirtualenv -p python3 -a /your/workspace/weatheremail2```
 * activate the virtualenv
     * ```workon weatheremail2```
 * install the modules
