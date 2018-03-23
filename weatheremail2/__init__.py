@@ -16,7 +16,7 @@ from flask_recaptcha import ReCaptcha
 
 from .models import db, Person, City
 
-from instance.config import DefaultConfig
+from instance.config import env_config
 
 app = Flask(__name__, instance_relative_config=True)
 mail = Mail()
@@ -25,7 +25,7 @@ recaptcha = ReCaptcha()
 
 
 def create_app(config_envar=None,
-               default_config=DefaultConfig):
+               env='default'):
     """Factory method returning a configured app context
 
 
@@ -48,7 +48,7 @@ def create_app(config_envar=None,
          db: access and entry point for Flask_SqlAlchemy
          recaptcha: access to and configuration for Flask_Recaptcha
      """
-    app.config.from_object(default_config)
+    app.config.from_object(env_config[env])
     if config_envar:
         app.config.from_envvar(config_envar)
     mail.init_app(app)
