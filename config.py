@@ -1,0 +1,56 @@
+
+class DefaultConfig(object):
+	DEBUG = False
+	TESTING = False
+	API_KEY_WUNDERGROUND = ''
+	SECRET_KEY = ''
+	WTF_CSRF_SECRET_KEY = ''
+	SQLALCHEMY_TRACK_MODIFICATIONS = False
+	SQLALCHEMY_ECHO = False
+	SQLALCHEMY_DATABASE_URI = 'postgresql://localhost:5432/weatheremail2_dev'
+	MAIL_SERVER = 'smtp.gmail.com'
+	MAIL_PORT = 587
+	MAIL_USE_SSL = False
+	MAIL_USE_TLS = True
+	MAIL_USERNAME = ''
+	MAIL_PASSWORD = ''
+	MAIL_SUPPRESS_SEND = False
+	MAIL_ASCII_ATTACHMENTS = False
+	RECAPTCHA_ENABLED = True
+	RECAPTCHA_SITE_KEY = ''
+	RECAPTCHA_SECRET_KEY = ''
+	SESSION_COOKIE_SECURE = False
+	TRAP_BAD_REQUEST_ERRORS = False
+	TRAP_HTTP_EXCEPTIONS = False
+	PRESERVE_CONTEXT_ON_EXCEPTION = False
+	PROPAGATE_EXCEPTIONS = False
+
+
+class TestingConfig(DefaultConfig):
+	DEBUG = False
+	TESTING = True
+	API_KEY_WUNDERGROUND = ''
+	SECRET_KEY = ''
+	WTF_CSRF_SECRET_KEY = ''
+	SQLALCHEMY_TRACK_MODIFICATIONS = False
+	SQLALCHEMY_ECHO = False
+	SQLALCHEMY_DATABASE_URI = 'postgresql://localhost:5432/weatheremail2_test'
+	WTF_CSRF_ENABLED = False # Needs to be False for test cases to work
+	MAIL_SERVER = 'smtp.gmail.com'
+	MAIL_PORT = 587
+	MAIL_USE_SSL = False
+	MAIL_USE_TLS = True
+	MAIL_USERNAME = ''
+	MAIL_PASSWORD = ''
+	MAIL_SUPPRESS_SEND = True
+	MAIL_ASCII_ATTACHMENTS = False
+	RECAPTCHA_ENABLED = False
+	SESSION_COOKIE_SECURE = False
+	PROPAGATE_EXCEPTIONS = True
+
+
+env_config = {
+    'default': DefaultConfig,
+    'test': TestingConfig
+}
+
