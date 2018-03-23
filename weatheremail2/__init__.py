@@ -30,7 +30,7 @@ def create_app(config_envar=None,
 
 
     Notes:
-          If config_envar is None and there isn't an external config file
+          If config_en variable is None and there isn't an external config file
             passed in, then the the value in the 'env' arg is
             used.
 
