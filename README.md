@@ -84,7 +84,9 @@ This way, you don't need to set the env variable ```APP_SETTINGS```...  you can 
 After creating your configuration, you can prep the database and load data.
 
 At the command line, run the following to populate your database with city data:
-```$ flask load_data```
+```
+$ flask load_data
+```
 
 This will drop and recreate the schema as well as populate the ```city``` table with data.
 
@@ -92,7 +94,9 @@ This will drop and recreate the schema as well as populate the ```city``` table 
 ## Testing
 
 To run the unit tests, do the following at the command line:
-```$ python tests.py```
+```
+$ python tests.py
+```
 
 ## Running The App
 Assuming you have done the above, you can set the following at the command line:
@@ -116,7 +120,9 @@ $ flask run
 ## Sending Emails
 
 At the command line, run the following to populate your database with city data:
-```$ flask send_weather_emails```
+```
+$ flask send_weather_emails
+```
 
 ## Database Schema
 
@@ -125,7 +131,7 @@ At the command line, run the following to populate your database with city data:
 | Column     | Datatype | Default | Meaning |
 | ---      | ---       | ---     | ---      |
 |id | int4 | primary_key |  sequential # assigned each row (surrogate key)          |
-|email | Varchar(254 | unique |  email of person signing up      |
+|email | Varchar(254 | unique, NOT NULL  |  email of person signing up      |
 |city_id | int4 | ForeignKey('city.id'), NOT NULL |  FK ref to id corresponding to city chosen during signup      |
 |time_created | timestamp with TZ | NOT NULL |  ts record created    |
 |time_updated | timestamp with TZ | DEFAULT NULL |  ts record updated     |
