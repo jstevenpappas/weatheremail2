@@ -16,14 +16,16 @@ from flask_recaptcha import ReCaptcha
 
 from .models import db, Person, City
 
-app = Flask(__name__)
+from instance.config import DefaultConfig
+
+app = Flask(__name__, instance_relative_config=True)
 mail = Mail()
 cache = Cache()
 recaptcha = ReCaptcha()
 
 
 def create_app(config_envar=None,
-               default_config='weatheremail2.config.DefaultConfig'):
+               default_config=DefaultConfig):
     """Factory method returning a configured app context
 
 

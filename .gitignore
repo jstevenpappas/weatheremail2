@@ -18,6 +18,9 @@ __pycache__/*
 build/
 dist/
 
+#instance config
+instance/
+
 ##  local shell scripts
 *.sh
 
