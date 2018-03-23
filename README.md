@@ -80,6 +80,8 @@ This way, you don't need to set the env variable ```APP_SETTINGS```...  you can 
 
 ## Populating Data
 
+After creating your configuration, you can prep the database and load data.
+
 At the command line, run the following to populate your database with city data:
 ```$ flask load_data```
 
@@ -95,8 +97,19 @@ To run the unit tests, do the following at the command line:
 Assuming you have done the above, you can set the following at the command line:
 
 ```
-export APP_SETTINGS=/Users/jpappas/workspace_python/weatheremail2/settings.cfg
 export FLASK_APP=run.py
+```
+
+If you have went the ```instance_relative_config``` route described above and put your settings in there, then that's all you need to set.
+
+If you created an external configuration file, then you should set that now so it is picked up.
+```
+export APP_SETTINGS=/path/to/settings.cfg
+```
+
+Then to run the web app:
+```
+$ flask run
 ```
 
 ## Sending Emails
