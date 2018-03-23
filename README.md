@@ -32,13 +32,14 @@ Additionally, it is assumed you are able to acquire the following:
 * Google Recaptcha site and secret key
 
 
+To setup the project, please do the following:
 * create a target dir and cd to it
     * ```mkdir /your/workspace/weatheremail2```
     * ```cd /your/workspace/weatheremail2```
 * clone the repo
     * ```git clone https://github.com/jstevenpappas/weatheremail2.git```
 * create the virtualenv
-    * ```mkvirtualenv -p python2.7 -a /your/workspace/weatheremail2``
+    * ```mkvirtualenv -p python2.7 -a /your/workspace/weatheremail2```
 * activate the virtualenv
     * ```workon weatheremail2```
 * install the modules
