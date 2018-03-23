@@ -72,7 +72,14 @@ The following config values are the main ones you will need to provide with valu
 If you wish to disable Recaptcha in dev, then you can set the following to false and leave the other Recapcha configs empty:
 ``` RECAPTCHA_ENABLED = False```
 
-An alternative to relying on the config module for configuration, you can create a ```settings.cfg``` file and  put your configuration in there.
+An alternative to relying on the config module for configuration, you can create a ```settings.cfg``` file and  put your configuration in there and set the following envvironment variable:
+```
+export APP_SETTINGS=/path/to/settings.cfg
+```
+
+Additionally, this project uses ```instance_relative_config``` when creating the Flask app.
+Your can, therefore, create a directory named 'instance' under the project root and copy the ```config.py``` file from the project root to that directory.
+This way, you don't need to set the env variable ```APP_SETTINGS```...  you can just set your configuration in the ```instance/config.py```  file and not be concerned that version control will pick it up and put it in your repo.
 
 
 ## Populating Data
