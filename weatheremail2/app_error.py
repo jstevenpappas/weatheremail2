@@ -1,6 +1,5 @@
 """
 .. module:: app_error
-   :platform: Unix, Windows
    :synopsis: Custom exception class so we can wrap other exceptions and
     format the output.
 .. moduleauthor:: John Pappas <jstevenpappas at gmail.com>

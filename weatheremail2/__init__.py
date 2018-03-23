@@ -30,16 +30,16 @@ def create_app(config_envar=None,
 
 
     Notes:
-          If config_envar is None and there isn't an external config file
-            passed in, then the the value in the default_config arg is
+          If config_en variable is None and there isn't an external config file
+            passed in, then the the value in the 'env' arg is
             used.
 
      Args:
          config_envar (str): Env var pointing to file that has key=value pairs
             necessary for application to run.
-         default_config (cls): Class containing key/value pairs needed for
+         env (str): dict key used to return a config class from instance.config
             Flask app to run.
-                Defaults to 'weatheremail2.config.DefaultConfig'.
+                Defaults to 'default'.
 
      Attributes:
          app: contains Flask app and context - nothing happens without this

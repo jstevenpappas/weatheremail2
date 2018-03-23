@@ -71,7 +71,6 @@ def signup():
 
                         city = request.form.get('location')
 
-                        # if can't find city w/ this id then throw error
                         selected_city = City.query.filter_by(
                             id=int(city)).first()
 
